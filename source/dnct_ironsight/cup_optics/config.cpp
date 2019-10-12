@@ -2,13 +2,14 @@
 
 class CfgPatches
 {
-	class DNCT_Ironsight_Optics_CUP
-	{
-		units[]={};
-		weapons[]={};
-		requiredVersion=0.1;
-		requiredAddons[]=
-		{
+    class DNCT_Ironsight_Optics_CUP
+    {
+        addonRootClass="DNCT_Ironsight";
+        units[]={};
+        weapons[]={};
+        requiredVersion=0.1;
+        requiredAddons[]=
+        {
             "cup_weapons_weaponscore",
             "cup_weapons_weaponsdata",
             "cup_weapons_west_attachments",
