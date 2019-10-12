@@ -1,0 +1,11 @@
+name = "Ironsight";
+picture = "\dnct_ironsight\resources\logo_overview.paa";
+logo = "\dnct_ironsight\resources\logo.paa";
+logoOver = "\dnct_ironsight\resources\logo.paa";
+tooltip = "Ironsight";
+tooltipOwned = "Ironsight Owned";
+overview = "Disables zooming ability while aiming down ironsights of CUP and vanilla weapons. Does not affect free look and vehicles.<br/><br/>Based off ruPal's DisableZoom mod.";
+author = "Dunecat (aka Cambusta)";
+overviewPicture = "\dnct_ironsight\resources\logo_overview.paa";
+actionName = "GitHub";
+action = "https://github.com/Cambusta/Ironsight";

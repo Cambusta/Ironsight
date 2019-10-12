@@ -1,0 +1,7 @@
+#define MINZOOM 0.69999999
+#define MAXZOOM 0.69999999
+#define INITZOOM 0.69999999
+
+#define MINFOV 0.75
+#define MAXFOV 0.75
+#define INITFOV 0.75
