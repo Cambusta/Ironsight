@@ -1,42 +1,50 @@
 /*
 	Generates a list of CfgWeapons entires containing only ironsight modes of CUP
-	scopes. Used to populate cup_optics/config.cpp file.
+	scopes. Used to populate cup_optics/config.cpp and a3_optics/config.cpp files.
+
+	To build the config file, run
+		Vanilla optics: 	['optic_', '_opticsMemoryPoint == "eye"'] call dnct_f_buildOpticsConfigFile;
+		CUP optics:			['CUP_optic_', '(_opticsModeParentClassName != "" && _opticsModeCount > 1) || _opticsModeCount == 1'] call dnct_f_buildOpticsConfigFile;
 */
 
-dnct_f_cup_buildOpticsConfigFile = {
+dnct_f_buildOpticsConfigFile = {
 
 	hint "Building...";
 
-	_scopeConfigs = [];
-	_opticModeParents = [];
+	_prefix = param[0];
+	_filter = param[1];
 
-	_multimodeScopes = call dnct_f_cup_getOpticConfigsMultimode;
+	_scopeConfigs = [];
+	_parentDeclarations = [];
+
+	_multimodeScopes = [_prefix] call dnct_f_getOpticConfigsMultimode;
 	_scopeConfigs = _scopeConfigs + _multimodeScopes;
 
-	_variableScopes = call dnct_f_cup_getOpticsConfigsSinglemodeVariable;
+	_variableScopes = [_prefix] call dnct_f_getOpticsConfigsSingleModeVariable;
 	_scopeConfigs = _scopeConfigs + _variableScopes;
 
 	_scopesConfigsString = "";
 
 	{
-		_config = [_x, _opticModeParents, true] call dnct_f_cup_buildScopeIronsightConfigEntry;
+		_config = [_x, _parentDeclarations, _filter, true] call dnct_f_buildScopeIronsightConfigEntry;
 		_scopesConfigsString = _scopesConfigsString + _config + endl;
 	} forEach _scopeConfigs;
 
-	_opticsModeParentsConfigString = [_opticModeParents] call dnct_f_cup_buildOpticsModesParentsDeclarations;
+	_declarationsString = [_parentDeclarations] call dnct_f_buildDeclarationsSections;
 
-	_configString = _opticsModeParentsConfigString + endl + endl + _scopesConfigsString;
+	_configString = _declarationsString + endl + endl + _scopesConfigsString;
 
 	copyToClipboard _configString;
 
-	hint format["Optics config file has been built for %1 scopes.", count _scopeConfigs];
+	hint format["Optics config file has been built for %1 scopes with prefix %2. Result copied to clipboard.", count _scopeConfigs, _prefix];
 };
 
-dnct_f_cup_buildScopeIronsightConfigEntry = {
+dnct_f_buildScopeIronsightConfigEntry = {
 
 	_scopeConfig = param[0];
-	_opticsModeParents = param[1];
-	_zoomValuesMacro = param[2, false];
+	_parentDeclarations = param[1];
+	_filteringConditionString = param[2];
+	_zoomValuesMacro = param[3, false];
 	_tab = "    ";
 	_scopeString = "";
 
@@ -60,6 +68,7 @@ dnct_f_cup_buildScopeIronsightConfigEntry = {
 			_opticsMode = (_scopeConfig >> "ItemInfo" >> "OpticsModes") select _modeIndex;
 			_opticsModeClassname = configName _opticsMode;
 			_opticsModeParentClassName = configName (inheritsFrom _opticsMode);
+			_opticsMemoryPoint = getText (_opticsMode >> "memoryPointCamera");
 			
 			_opticsZoomMin = getNumber (_opticsMode >> "opticsZoomMin");
 			_opticsZoomMax = getNumber (_opticsMode >> "opticsZoomMax");
@@ -72,14 +81,11 @@ dnct_f_cup_buildScopeIronsightConfigEntry = {
 				_opticsZoomInit = "INITZOOM";
 			};
 
-			// In CUP, ironsight mode is inherited from other optical modes, so if an optical mode has no parents and it isn't
-			// the only available mode, skip it as it itsn't an ironsight mode. At the same time we shouldn't skip scopes that
-			// have a single optics mode as those have variable zoom (we got them from dnct_f_cup_getOpticsConfigsSinglemodeVariable)
-			if ((_opticsModeParentClassName != "" && _opticsModeCount > 1) || _opticsModeCount == 1) then
+			if (call compile _filteringConditionString) then
 			{
 				if (_opticsModeParentClassName != "") then
 				{
-					_opticsModeParents pushBackUnique _opticsModeParentClassName;
+					_parentDeclarations pushBackUnique _opticsModeParentClassName;
 					_scopeString = _scopeString + format["%1%1%1class %2: %3%4", _tab, _opticsModeClassname, _opticsModeParentClassName, endl];
 				}
 				else
@@ -88,9 +94,9 @@ dnct_f_cup_buildScopeIronsightConfigEntry = {
 				};
 
 				_scopeString = _scopeString + format["%1%1%1{%2", _tab, endl];
-				_scopeString = _scopeString + format["%1%1%1%1opticsZoomMin=%2%3", _tab, _opticsZoomMin, endl];
-				_scopeString = _scopeString + format["%1%1%1%1opticsZoomMax=%2%3", _tab, _opticsZoomMax, endl];
-				_scopeString = _scopeString + format["%1%1%1%1opticsZoomInit=%2%3", _tab, _opticsZoomInit, endl];
+				_scopeString = _scopeString + format["%1%1%1%1opticsZoomMin=%2%3;", _tab, _opticsZoomMin, endl];
+				_scopeString = _scopeString + format["%1%1%1%1opticsZoomMax=%2%3;", _tab, _opticsZoomMax, endl];
+				_scopeString = _scopeString + format["%1%1%1%1opticsZoomInit=%2%3;", _tab, _opticsZoomInit, endl];
 				_scopeString = _scopeString + format["%1%1%1};%2", _tab, endl];
 			};
 		};
@@ -103,40 +109,46 @@ dnct_f_cup_buildScopeIronsightConfigEntry = {
 	_scopeString
 };
 
-dnct_f_cup_buildOpticsModesParentsDeclarations = {
+dnct_f_buildDeclarationsSections = {
 	_opticsModesParents = param[0];
-	_declarations = "";
+
+	_declarations = "class ItemCore;" + endl;
+	_declarations = "class InventoryOpticsItem_Base_F;" + endl;
 
 	{
 		_class = format["class %1;%2", _x, endl];
-		_declarations = _declarations + _class + endl;
+		_declarations = _declarations + _class;
 	} forEach _opticsModesParents;
 
 	_declarations
 };
 
-dnct_f_cup_getOpticConfigsMultimode = {
+dnct_f_getOpticConfigsMultimode = {
 
-	_cupScopeConfigs = call dnct_f_cup_getCUPScopeConfigs;
-	_cupScopeConfigsMultimode = [];
+	_prefix = param[0];
+
+	_scopeConfigs = [_prefix] call dnct_f_getScopeConfigs;
+	_scopeConfigsMultimode = [];
 
 	{
 		_opticsModeCount = count (_x >> "ItemInfo" >> "OpticsModes");
 
 		if (_opticsModeCount > 1) then
 		{
-			_cupScopeConfigsMultimode pushBack _x;
+			_scopeConfigsMultimode pushBack _x;
 		};
 		
-	} forEach _cupScopeConfigs;
+	} forEach _scopeConfigs;
 
-	_cupScopeConfigsMultimode
+	_scopeConfigsMultimode
 };
 
-dnct_f_cup_getOpticsConfigsSinglemodeVariable = {
+dnct_f_getOpticsConfigsSingleModeVariable = {
 
-	_cupScopeConfigs = call dnct_f_cup_getCUPScopeConfigs;
-	_cupScopeConfigsVariable = [];
+	_prefix = param[0];
+
+	_scopeConfigs = [_prefix] call dnct_f_getScopeConfigs;
+	_scopeConfigsVariable = [];
 
 	{
 		_opticsModeCount = count (_x >> "ItemInfo" >> "OpticsModes");
@@ -151,30 +163,32 @@ dnct_f_cup_getOpticsConfigsSinglemodeVariable = {
 
 			if (_opticsZoomInit != _opticsZoomMax) then
 			{
-				_cupScopeConfigsVariable pushBack _x;
+				_scopeConfigsVariable pushBack _x;
 			};
 		};
 		
-	} forEach _cupScopeConfigs;
+	} forEach _scopeConfigs;
 
-	_cupScopeConfigsVariable
+	_scopeConfigsVariable
 };
 
-dnct_f_cup_getCUPScopeConfigs = {
+dnct_f_getScopeConfigs = {
+
+	_prefix = param[0];
 
 	_itemConfigs = "inheritsFrom _x == (configFile >> 'CfgWeapons' >> 'ItemCore')" configClasses (configFile >> "CfgWeapons");
 
-	_cupScopeConfigs = [];
+	_scopeConfigs = [];
 
 	{
 		_className = configName _x;
 
-		if (_className find "CUP_optic" != -1) then 
+		if (_className find _prefix == 0) then 
 		{
-			_cupScopeConfigs pushBack _x;
+			_scopeConfigs pushBack _x;
 		};
 				
 	} forEach _itemConfigs;
 
-	_cupScopeConfigs
+	_scopeConfigs
 };
