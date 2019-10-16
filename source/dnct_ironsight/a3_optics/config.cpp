@@ -1,4 +1,4 @@
-#include "..\defines.cpp"
+#include "..\defines.hpp"
 
 class CfgPatches
 {

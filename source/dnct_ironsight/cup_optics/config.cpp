@@ -1,4 +1,4 @@
-#include "..\defines.cpp"
+#include "..\defines.hpp"
 
 class CfgPatches
 {
@@ -10,8 +10,6 @@ class CfgPatches
         requiredVersion=0.1;
         requiredAddons[]=
         {
-            "cup_weapons_weaponscore",
-            "cup_weapons_weaponsdata",
             "cup_weapons_west_attachments",
             "cup_weapons_east_attachments"
         };
