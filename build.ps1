@@ -1,5 +1,4 @@
 param (
-    [Parameter(Mandatory=$true)]
     [ValidateSet('Prebuild', 'Full')]
     $BuildMode = 'Prebuild'
 )
@@ -12,21 +11,15 @@ $VersionFile = ".\version.txt"
 $IncludeFile = ".\include.txt"
 
 $AddonBuilder=${env:AddonBuilder}
-$SignatureFile=${env:SignatureFile}
+$PrivateBikeyFile=${env:PrivateBikey}
 
 function Run()
 {
-    param(
-        [Parameter(Mandatory=$true)]
-        [ValidateSet('Prebuild', 'Full')]
-        $BuildMode
-    )
-
     RunPrebuild
 
     if ($BuildMode -eq 'Full')
     {
-        if ([string]::IsNullOrWhiteSpace($AddonBuilder) -Or [string]::IsNullOrWhiteSpace($SignatureFile))
+        if ([string]::IsNullOrWhiteSpace($AddonBuilder) -Or [string]::IsNullOrWhiteSpace($PrivateBikeyFile))
         {
             Write-Host "Build error: paths to AddonBuilder or signature private key are not set." -BackgroundColor Red
             Write-Host "Please set them by editing respective variables in build.ps1" -BackgroundColor Red
@@ -35,7 +28,6 @@ function Run()
 
         RunBuild
         RunPostBuild
-        RemoveTempDirectory
     }
 }
 
@@ -47,9 +39,10 @@ function RunPrebuild()
 
     EnsureDirectorues
     CopySourceToTempFolder
+
     SetVersion -FilesRoot $TempDirectoryPath -Version $version
 
-    Write-Host "Pre-build completed."
+    Write-Host "Pre-build completed. Prepared files are at: $(Resolve-Path $TempDirectoryPath)"
 }
 
 function RunBuild()
@@ -72,7 +65,7 @@ function RunPostBuild()
     Copy-Item -Path $modCppPath $addonRoot
 
     Write-Host "Copying public key"
-    $signatureFilePath = Get-Item $SignatureFile
+    $signatureFilePath = Get-Item $PrivateBikeyFile
     $signatureFileName = $signatureFilePath.BaseName
     $signatureDirectory = $signatureFilePath.Directory
 
@@ -87,16 +80,18 @@ function RunPostBuild()
     else 
     {
         Write-Warning "Unable to find public key"
-    }$p
+    }
 
-    Write-Host "Post-build completed."
+    RemoveTempDirectory
+
+    Write-Host "Post-build completed. Addon at: $(Resolve-Path $addonRoot)"
 }
 
 function BuildAddon()
 {
     $sourceDir = Resolve-Path $(Join-Path $TempDirectoryPath $AddonFolderName)
     $desinationDir = Join-Path $(Resolve-Path $BuildDirectoryPath) "@$AddonFolderName\addons\"
-    $arguments = @($sourceDir, $desinationDir, "-clear", "-sign=$SignatureFile", "-include=$IncludeFile")
+    $arguments = @($sourceDir, $desinationDir, "-clear", "-sign=$PrivateBikeyFile", "-include=$IncludeFile")
 
     Write-Host "Running AddonBuilder..."
 
@@ -179,4 +174,4 @@ function RemoveTempDirectory()
     Remove-Item $TempDirectoryPath -Recurse -Force
 }
 
-Run -BuildMode $BuildMode
+Run
