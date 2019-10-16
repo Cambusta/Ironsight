@@ -1,4 +1,4 @@
-#include "..\defines.cpp"
+#include "..\defines.hpp"
 
 class CfgPatches
 {
@@ -10,8 +10,6 @@ class CfgPatches
         requiredVersion=0.1;
         requiredAddons[]=
         {
-            "cup_weapons_weaponscore",
-            "cup_weapons_weaponsdata",
             "cup_weapons_west_attachments",
             "cup_weapons_east_attachments"
         };
@@ -40,9 +38,9 @@ class CfgWeapons
             {
                 class Iron: PSO
                 {
-                    opticsZoomMin=MINZOOM
-                    opticsZoomMax=MAXZOOM
-                    opticsZoomInit=INITZOOM
+                    opticsZoomMin=MINZOOM;
+                    opticsZoomMax=MAXZOOM;
+                    opticsZoomInit=INITZOOM;
                 };
             };
         };
@@ -56,9 +54,9 @@ class CfgWeapons
             {
                 class Iron: PSO
                 {
-                    opticsZoomMin=MINZOOM
-                    opticsZoomMax=MAXZOOM
-                    opticsZoomInit=INITZOOM
+                    opticsZoomMin=MINZOOM;
+                    opticsZoomMax=MAXZOOM;
+                    opticsZoomInit=INITZOOM;
                 };
             };
         };
@@ -72,9 +70,9 @@ class CfgWeapons
             {
                 class Iron: PSO
                 {
-                    opticsZoomMin=MINZOOM
-                    opticsZoomMax=MAXZOOM
-                    opticsZoomInit=INITZOOM
+                    opticsZoomMin=MINZOOM;
+                    opticsZoomMax=MAXZOOM;
+                    opticsZoomInit=INITZOOM;
                 };
             };
         };
@@ -88,9 +86,9 @@ class CfgWeapons
             {
                 class Iron: PSO
                 {
-                    opticsZoomMin=MINZOOM
-                    opticsZoomMax=MAXZOOM
-                    opticsZoomInit=INITZOOM
+                    opticsZoomMin=MINZOOM;
+                    opticsZoomMax=MAXZOOM;
+                    opticsZoomInit=INITZOOM;
                 };
             };
         };
@@ -104,9 +102,9 @@ class CfgWeapons
             {
                 class Ironsights: NSPU
                 {
-                    opticsZoomMin=MINZOOM
-                    opticsZoomMax=MAXZOOM
-                    opticsZoomInit=INITZOOM
+                    opticsZoomMin=MINZOOM;
+                    opticsZoomMax=MAXZOOM;
+                    opticsZoomInit=INITZOOM;
                 };
             };
         };
@@ -120,9 +118,9 @@ class CfgWeapons
             {
                 class Iron: Scope
                 {
-                    opticsZoomMin=MINZOOM
-                    opticsZoomMax=MAXZOOM
-                    opticsZoomInit=INITZOOM
+                    opticsZoomMin=MINZOOM;
+                    opticsZoomMax=MAXZOOM;
+                    opticsZoomInit=INITZOOM;
                 };
             };
         };
@@ -136,9 +134,9 @@ class CfgWeapons
             {
                 class Iron: PSO
                 {
-                    opticsZoomMin=MINZOOM
-                    opticsZoomMax=MAXZOOM
-                    opticsZoomInit=INITZOOM
+                    opticsZoomMin=MINZOOM;
+                    opticsZoomMax=MAXZOOM;
+                    opticsZoomInit=INITZOOM;
                 };
             };
         };
@@ -152,9 +150,9 @@ class CfgWeapons
             {
                 class Iron: PSO
                 {
-                    opticsZoomMin=MINZOOM
-                    opticsZoomMax=MAXZOOM
-                    opticsZoomInit=INITZOOM
+                    opticsZoomMin=MINZOOM;
+                    opticsZoomMax=MAXZOOM;
+                    opticsZoomInit=INITZOOM;
                 };
             };
         };
@@ -168,9 +166,9 @@ class CfgWeapons
             {
                 class Kolimator: SUSAT
                 {
-                    opticsZoomMin=MINZOOM
-                    opticsZoomMax=MAXZOOM
-                    opticsZoomInit=INITZOOM
+                    opticsZoomMin=MINZOOM;
+                    opticsZoomMax=MAXZOOM;
+                    opticsZoomInit=INITZOOM;
                 };
             };
         };
@@ -184,9 +182,9 @@ class CfgWeapons
             {
                 class Kolimator: SUSAT
                 {
-                    opticsZoomMin=MINZOOM
-                    opticsZoomMax=MAXZOOM
-                    opticsZoomInit=INITZOOM
+                    opticsZoomMin=MINZOOM;
+                    opticsZoomMax=MAXZOOM;
+                    opticsZoomInit=INITZOOM;
                 };
             };
         };
@@ -200,9 +198,9 @@ class CfgWeapons
             {
                 class Kolimator: ACOG
                 {
-                    opticsZoomMin=MINZOOM
-                    opticsZoomMax=MAXZOOM
-                    opticsZoomInit=INITZOOM
+                    opticsZoomMin=MINZOOM;
+                    opticsZoomMax=MAXZOOM;
+                    opticsZoomInit=INITZOOM;
                 };
             };
         };
@@ -216,9 +214,9 @@ class CfgWeapons
             {
                 class Kolimator: ACOG
                 {
-                    opticsZoomMin=MINZOOM
-                    opticsZoomMax=MAXZOOM
-                    opticsZoomInit=INITZOOM
+                    opticsZoomMin=MINZOOM;
+                    opticsZoomMax=MAXZOOM;
+                    opticsZoomInit=INITZOOM;
                 };
             };
         };
@@ -232,9 +230,9 @@ class CfgWeapons
             {
                 class Kolimator: ACOG
                 {
-                    opticsZoomMin=MINZOOM
-                    opticsZoomMax=MAXZOOM
-                    opticsZoomInit=INITZOOM
+                    opticsZoomMin=MINZOOM;
+                    opticsZoomMax=MAXZOOM;
+                    opticsZoomInit=INITZOOM;
                 };
             };
         };
@@ -248,9 +246,9 @@ class CfgWeapons
             {
                 class Kolimator: ACOG
                 {
-                    opticsZoomMin=MINZOOM
-                    opticsZoomMax=MAXZOOM
-                    opticsZoomInit=INITZOOM
+                    opticsZoomMin=MINZOOM;
+                    opticsZoomMax=MAXZOOM;
+                    opticsZoomInit=INITZOOM;
                 };
             };
         };
@@ -264,9 +262,9 @@ class CfgWeapons
             {
                 class Kolimator: ACOG
                 {
-                    opticsZoomMin=MINZOOM
-                    opticsZoomMax=MAXZOOM
-                    opticsZoomInit=INITZOOM
+                    opticsZoomMin=MINZOOM;
+                    opticsZoomMax=MAXZOOM;
+                    opticsZoomInit=INITZOOM;
                 };
             };
         };
@@ -280,9 +278,9 @@ class CfgWeapons
             {
                 class Kolimator: ACOG
                 {
-                    opticsZoomMin=MINZOOM
-                    opticsZoomMax=MAXZOOM
-                    opticsZoomInit=INITZOOM
+                    opticsZoomMin=MINZOOM;
+                    opticsZoomMax=MAXZOOM;
+                    opticsZoomInit=INITZOOM;
                 };
             };
         };
@@ -296,9 +294,9 @@ class CfgWeapons
             {
                 class Kolimator: ACOG
                 {
-                    opticsZoomMin=MINZOOM
-                    opticsZoomMax=MAXZOOM
-                    opticsZoomInit=INITZOOM
+                    opticsZoomMin=MINZOOM;
+                    opticsZoomMax=MAXZOOM;
+                    opticsZoomInit=INITZOOM;
                 };
             };
         };
@@ -312,9 +310,9 @@ class CfgWeapons
             {
                 class Kolimator: ACOG
                 {
-                    opticsZoomMin=MINZOOM
-                    opticsZoomMax=MAXZOOM
-                    opticsZoomInit=INITZOOM
+                    opticsZoomMin=MINZOOM;
+                    opticsZoomMax=MAXZOOM;
+                    opticsZoomInit=INITZOOM;
                 };
             };
         };
@@ -328,9 +326,9 @@ class CfgWeapons
             {
                 class Kolimator: ACOG
                 {
-                    opticsZoomMin=MINZOOM
-                    opticsZoomMax=MAXZOOM
-                    opticsZoomInit=INITZOOM
+                    opticsZoomMin=MINZOOM;
+                    opticsZoomMax=MAXZOOM;
+                    opticsZoomInit=INITZOOM;
                 };
             };
         };
@@ -344,9 +342,9 @@ class CfgWeapons
             {
                 class Kolimator: ACOG
                 {
-                    opticsZoomMin=MINZOOM
-                    opticsZoomMax=MAXZOOM
-                    opticsZoomInit=INITZOOM
+                    opticsZoomMin=MINZOOM;
+                    opticsZoomMax=MAXZOOM;
+                    opticsZoomInit=INITZOOM;
                 };
             };
         };
@@ -360,9 +358,9 @@ class CfgWeapons
             {
                 class Kolimator: MK4CQT
                 {
-                    opticsZoomMin=MINZOOM
-                    opticsZoomMax=MAXZOOM
-                    opticsZoomInit=INITZOOM
+                    opticsZoomMin=MINZOOM;
+                    opticsZoomMax=MAXZOOM;
+                    opticsZoomInit=INITZOOM;
                 };
             };
         };
@@ -376,9 +374,9 @@ class CfgWeapons
             {
                 class Ironsights: Scope
                 {
-                    opticsZoomMin=MINZOOM
-                    opticsZoomMax=MAXZOOM
-                    opticsZoomInit=INITZOOM
+                    opticsZoomMin=MINZOOM;
+                    opticsZoomMax=MAXZOOM;
+                    opticsZoomInit=INITZOOM;
                 };
             };
         };
@@ -392,9 +390,9 @@ class CfgWeapons
             {
                 class Ironsight: Scope
                 {
-                    opticsZoomMin=MINZOOM
-                    opticsZoomMax=MAXZOOM
-                    opticsZoomInit=INITZOOM
+                    opticsZoomMin=MINZOOM;
+                    opticsZoomMax=MAXZOOM;
+                    opticsZoomInit=INITZOOM;
                 };
             };
         };
@@ -408,15 +406,15 @@ class CfgWeapons
             {
                 class Specter1x: Specter4x
                 {
-                    opticsZoomMin=MINZOOM
-                    opticsZoomMax=MAXZOOM
-                    opticsZoomInit=INITZOOM
+                    opticsZoomMin=MINZOOM;
+                    opticsZoomMax=MAXZOOM;
+                    opticsZoomInit=INITZOOM;
                 };
                 class Ironsights: Specter4x
                 {
-                    opticsZoomMin=MINZOOM
-                    opticsZoomMax=MAXZOOM
-                    opticsZoomInit=INITZOOM
+                    opticsZoomMin=MINZOOM;
+                    opticsZoomMax=MAXZOOM;
+                    opticsZoomInit=INITZOOM;
                 };
             };
         };
@@ -430,9 +428,9 @@ class CfgWeapons
             {
                 class Ironsights: Specter
                 {
-                    opticsZoomMin=MINZOOM
-                    opticsZoomMax=MAXZOOM
-                    opticsZoomInit=INITZOOM
+                    opticsZoomMin=MINZOOM;
+                    opticsZoomMax=MAXZOOM;
+                    opticsZoomInit=INITZOOM;
                 };
             };
         };
@@ -446,9 +444,9 @@ class CfgWeapons
             {
                 class Kolimator: Specter
                 {
-                    opticsZoomMin=MINZOOM
-                    opticsZoomMax=MAXZOOM
-                    opticsZoomInit=INITZOOM
+                    opticsZoomMin=MINZOOM;
+                    opticsZoomMax=MAXZOOM;
+                    opticsZoomInit=INITZOOM;
                 };
             };
         };
@@ -472,9 +470,9 @@ class CfgWeapons
             {
                 class iron: regular
                 {
-                    opticsZoomMin=MINZOOM
-                    opticsZoomMax=MAXZOOM
-                    opticsZoomInit=INITZOOM
+                    opticsZoomMin=MINZOOM;
+                    opticsZoomMax=MAXZOOM;
+                    opticsZoomInit=INITZOOM;
                 };
             };
         };
@@ -488,9 +486,9 @@ class CfgWeapons
             {
                 class ACO
                 {
-                    opticsZoomMin=MINZOOM
-                    opticsZoomMax=MAXZOOM
-                    opticsZoomInit=INITZOOM
+                    opticsZoomMin=MINZOOM;
+                    opticsZoomMax=MAXZOOM;
+                    opticsZoomInit=INITZOOM;
                 };
             };
         };
@@ -504,9 +502,9 @@ class CfgWeapons
             {
                 class ACO
                 {
-                    opticsZoomMin=MINZOOM
-                    opticsZoomMax=MAXZOOM
-                    opticsZoomInit=INITZOOM
+                    opticsZoomMin=MINZOOM;
+                    opticsZoomMax=MAXZOOM;
+                    opticsZoomInit=INITZOOM;
                 };
             };
         };
@@ -520,9 +518,9 @@ class CfgWeapons
             {
                 class ACO
                 {
-                    opticsZoomMin=MINZOOM
-                    opticsZoomMax=MAXZOOM
-                    opticsZoomInit=INITZOOM
+                    opticsZoomMin=MINZOOM;
+                    opticsZoomMax=MAXZOOM;
+                    opticsZoomInit=INITZOOM;
                 };
             };
         };
@@ -536,9 +534,9 @@ class CfgWeapons
             {
                 class EoTx
                 {
-                    opticsZoomMin=MINZOOM
-                    opticsZoomMax=MAXZOOM
-                    opticsZoomInit=INITZOOM
+                    opticsZoomMin=MINZOOM;
+                    opticsZoomMax=MAXZOOM;
+                    opticsZoomInit=INITZOOM;
                 };
             };
         };
@@ -552,9 +550,9 @@ class CfgWeapons
             {
                 class EoTx
                 {
-                    opticsZoomMin=MINZOOM
-                    opticsZoomMax=MAXZOOM
-                    opticsZoomInit=INITZOOM
+                    opticsZoomMin=MINZOOM;
+                    opticsZoomMax=MAXZOOM;
+                    opticsZoomInit=INITZOOM;
                 };
             };
         };
@@ -568,9 +566,9 @@ class CfgWeapons
             {
                 class EoTx
                 {
-                    opticsZoomMin=MINZOOM
-                    opticsZoomMax=MAXZOOM
-                    opticsZoomInit=INITZOOM
+                    opticsZoomMin=MINZOOM;
+                    opticsZoomMax=MAXZOOM;
+                    opticsZoomInit=INITZOOM;
                 };
             };
         };
@@ -584,9 +582,9 @@ class CfgWeapons
             {
                 class EoTx
                 {
-                    opticsZoomMin=MINZOOM
-                    opticsZoomMax=MAXZOOM
-                    opticsZoomInit=INITZOOM
+                    opticsZoomMin=MINZOOM;
+                    opticsZoomMax=MAXZOOM;
+                    opticsZoomInit=INITZOOM;
                 };
             };
         };
@@ -600,9 +598,9 @@ class CfgWeapons
             {
                 class EoTx
                 {
-                    opticsZoomMin=MINZOOM
-                    opticsZoomMax=MAXZOOM
-                    opticsZoomInit=INITZOOM
+                    opticsZoomMin=MINZOOM;
+                    opticsZoomMax=MAXZOOM;
+                    opticsZoomInit=INITZOOM;
                 };
             };
         };
@@ -616,9 +614,9 @@ class CfgWeapons
             {
                 class ZDDot
                 {
-                    opticsZoomMin=MINZOOM
-                    opticsZoomMax=MAXZOOM
-                    opticsZoomInit=INITZOOM
+                    opticsZoomMin=MINZOOM;
+                    opticsZoomMax=MAXZOOM;
+                    opticsZoomInit=INITZOOM;
                 };
             };
         };
@@ -632,9 +630,9 @@ class CfgWeapons
             {
                 class MRAD
                 {
-                    opticsZoomMin=MINZOOM
-                    opticsZoomMax=MAXZOOM
-                    opticsZoomInit=INITZOOM
+                    opticsZoomMin=MINZOOM;
+                    opticsZoomMax=MAXZOOM;
+                    opticsZoomInit=INITZOOM;
                 };
             };
         };
@@ -648,9 +646,9 @@ class CfgWeapons
             {
                 class Rx01
                 {
-                    opticsZoomMin=MINZOOM
-                    opticsZoomMax=MAXZOOM
-                    opticsZoomInit=INITZOOM
+                    opticsZoomMin=MINZOOM;
+                    opticsZoomMax=MAXZOOM;
+                    opticsZoomInit=INITZOOM;
                 };
             };
         };
@@ -664,9 +662,9 @@ class CfgWeapons
             {
                 class CWS
                 {
-                    opticsZoomMin=MINZOOM
-                    opticsZoomMax=MAXZOOM
-                    opticsZoomInit=INITZOOM
+                    opticsZoomMin=MINZOOM;
+                    opticsZoomMax=MAXZOOM;
+                    opticsZoomInit=INITZOOM;
                 };
             };
         };
@@ -680,9 +678,9 @@ class CfgWeapons
             {
                 class EoTx
                 {
-                    opticsZoomMin=MINZOOM
-                    opticsZoomMax=MAXZOOM
-                    opticsZoomInit=INITZOOM
+                    opticsZoomMin=MINZOOM;
+                    opticsZoomMax=MAXZOOM;
+                    opticsZoomInit=INITZOOM;
                 };
             };
         };
@@ -696,9 +694,9 @@ class CfgWeapons
             {
                 class Kolimator
                 {
-                    opticsZoomMin=MINZOOM
-                    opticsZoomMax=MAXZOOM
-                    opticsZoomInit=INITZOOM
+                    opticsZoomMin=MINZOOM;
+                    opticsZoomMax=MAXZOOM;
+                    opticsZoomInit=INITZOOM;
                 };
             };
         };
@@ -712,9 +710,9 @@ class CfgWeapons
             {
                 class Kolimator
                 {
-                    opticsZoomMin=MINZOOM
-                    opticsZoomMax=MAXZOOM
-                    opticsZoomInit=INITZOOM
+                    opticsZoomMin=MINZOOM;
+                    opticsZoomMax=MAXZOOM;
+                    opticsZoomInit=INITZOOM;
                 };
             };
         };
@@ -728,9 +726,9 @@ class CfgWeapons
             {
                 class Kolimator
                 {
-                    opticsZoomMin=MINZOOM
-                    opticsZoomMax=MAXZOOM
-                    opticsZoomInit=INITZOOM
+                    opticsZoomMin=MINZOOM;
+                    opticsZoomMax=MAXZOOM;
+                    opticsZoomInit=INITZOOM;
                 };
             };
         };
@@ -744,9 +742,9 @@ class CfgWeapons
             {
                 class Kolimator
                 {
-                    opticsZoomMin=MINZOOM
-                    opticsZoomMax=MAXZOOM
-                    opticsZoomInit=INITZOOM
+                    opticsZoomMin=MINZOOM;
+                    opticsZoomMax=MAXZOOM;
+                    opticsZoomInit=INITZOOM;
                 };
             };
         };
@@ -760,9 +758,9 @@ class CfgWeapons
             {
                 class Kolimator
                 {
-                    opticsZoomMin=MINZOOM
-                    opticsZoomMax=MAXZOOM
-                    opticsZoomInit=INITZOOM
+                    opticsZoomMin=MINZOOM;
+                    opticsZoomMax=MAXZOOM;
+                    opticsZoomInit=INITZOOM;
                 };
             };
         };
@@ -776,9 +774,9 @@ class CfgWeapons
             {
                 class Kolimator
                 {
-                    opticsZoomMin=MINZOOM
-                    opticsZoomMax=MAXZOOM
-                    opticsZoomInit=INITZOOM
+                    opticsZoomMin=MINZOOM;
+                    opticsZoomMax=MAXZOOM;
+                    opticsZoomInit=INITZOOM;
                 };
             };
         };
@@ -792,9 +790,9 @@ class CfgWeapons
             {
                 class Kolimator
                 {
-                    opticsZoomMin=MINZOOM
-                    opticsZoomMax=MAXZOOM
-                    opticsZoomInit=INITZOOM
+                    opticsZoomMin=MINZOOM;
+                    opticsZoomMax=MAXZOOM;
+                    opticsZoomInit=INITZOOM;
                 };
             };
         };
@@ -808,9 +806,9 @@ class CfgWeapons
             {
                 class Kolimator
                 {
-                    opticsZoomMin=MINZOOM
-                    opticsZoomMax=MAXZOOM
-                    opticsZoomInit=INITZOOM
+                    opticsZoomMin=MINZOOM;
+                    opticsZoomMax=MAXZOOM;
+                    opticsZoomInit=INITZOOM;
                 };
             };
         };
@@ -824,9 +822,9 @@ class CfgWeapons
             {
                 class Kolimator
                 {
-                    opticsZoomMin=MINZOOM
-                    opticsZoomMax=MAXZOOM
-                    opticsZoomInit=INITZOOM
+                    opticsZoomMin=MINZOOM;
+                    opticsZoomMax=MAXZOOM;
+                    opticsZoomInit=INITZOOM;
                 };
             };
         };
@@ -840,9 +838,9 @@ class CfgWeapons
             {
                 class Kolimator
                 {
-                    opticsZoomMin=MINZOOM
-                    opticsZoomMax=MAXZOOM
-                    opticsZoomInit=INITZOOM
+                    opticsZoomMin=MINZOOM;
+                    opticsZoomMax=MAXZOOM;
+                    opticsZoomInit=INITZOOM;
                 };
             };
         };
@@ -856,9 +854,9 @@ class CfgWeapons
             {
                 class Kolimator
                 {
-                    opticsZoomMin=MINZOOM
-                    opticsZoomMax=MAXZOOM
-                    opticsZoomInit=INITZOOM
+                    opticsZoomMin=MINZOOM;
+                    opticsZoomMax=MAXZOOM;
+                    opticsZoomInit=INITZOOM;
                 };
             };
         };
@@ -872,9 +870,9 @@ class CfgWeapons
             {
                 class Kolimator
                 {
-                    opticsZoomMin=MINZOOM
-                    opticsZoomMax=MAXZOOM
-                    opticsZoomInit=INITZOOM
+                    opticsZoomMin=MINZOOM;
+                    opticsZoomMax=MAXZOOM;
+                    opticsZoomInit=INITZOOM;
                 };
             };
         };
@@ -888,9 +886,9 @@ class CfgWeapons
             {
                 class Kolimator
                 {
-                    opticsZoomMin=MINZOOM
-                    opticsZoomMax=MAXZOOM
-                    opticsZoomInit=INITZOOM
+                    opticsZoomMin=MINZOOM;
+                    opticsZoomMax=MAXZOOM;
+                    opticsZoomInit=INITZOOM;
                 };
             };
         };
@@ -904,9 +902,9 @@ class CfgWeapons
             {
                 class Kolimator
                 {
-                    opticsZoomMin=MINZOOM
-                    opticsZoomMax=MAXZOOM
-                    opticsZoomInit=INITZOOM
+                    opticsZoomMin=MINZOOM;
+                    opticsZoomMax=MAXZOOM;
+                    opticsZoomInit=INITZOOM;
                 };
             };
         };
@@ -920,9 +918,9 @@ class CfgWeapons
             {
                 class Kolimator
                 {
-                    opticsZoomMin=MINZOOM
-                    opticsZoomMax=MAXZOOM
-                    opticsZoomInit=INITZOOM
+                    opticsZoomMin=MINZOOM;
+                    opticsZoomMax=MAXZOOM;
+                    opticsZoomInit=INITZOOM;
                 };
             };
         };
@@ -936,9 +934,9 @@ class CfgWeapons
             {
                 class Kolimator
                 {
-                    opticsZoomMin=MINZOOM
-                    opticsZoomMax=MAXZOOM
-                    opticsZoomInit=INITZOOM
+                    opticsZoomMin=MINZOOM;
+                    opticsZoomMax=MAXZOOM;
+                    opticsZoomInit=INITZOOM;
                 };
             };
         };
@@ -952,9 +950,9 @@ class CfgWeapons
             {
                 class Kolimator
                 {
-                    opticsZoomMin=MINZOOM
-                    opticsZoomMax=MAXZOOM
-                    opticsZoomInit=INITZOOM
+                    opticsZoomMin=MINZOOM;
+                    opticsZoomMax=MAXZOOM;
+                    opticsZoomInit=INITZOOM;
                 };
             };
         };
@@ -968,9 +966,9 @@ class CfgWeapons
             {
                 class Kolimator
                 {
-                    opticsZoomMin=MINZOOM
-                    opticsZoomMax=MAXZOOM
-                    opticsZoomInit=INITZOOM
+                    opticsZoomMin=MINZOOM;
+                    opticsZoomMax=MAXZOOM;
+                    opticsZoomInit=INITZOOM;
                 };
             };
         };
