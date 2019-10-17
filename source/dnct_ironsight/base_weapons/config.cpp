@@ -25,21 +25,21 @@ class CfgWeapons
     {
         opticsZoomMin=MINZOOM;
         opticsZoomMax=MAXZOOM;
-        opticsZoomMax=INITZOOM;
+        opticsZoomInit=INITZOOM;
     };
 
     class GrenadeLauncher: Default
     {
         opticsZoomMin=MINZOOM;
         opticsZoomMax=MAXZOOM;
-        opticsZoomMax=INITZOOM;
+        opticsZoomInit=INITZOOM;
     };
 
     class UGL_F: GrenadeLauncher
     {
         opticsZoomMin=MINZOOM;
         opticsZoomMax=MAXZOOM;
-        opticsZoomMax=INITZOOM;
+        opticsZoomInit=INITZOOM;
     };
 
     class RifleCore;
@@ -47,7 +47,7 @@ class CfgWeapons
     {
         opticsZoomMin=MINZOOM;
         opticsZoomMax=MAXZOOM;
-        opticsZoomMax=INITZOOM;
+        opticsZoomInit=INITZOOM;
     };
 
     class PistolCore;
@@ -55,14 +55,14 @@ class CfgWeapons
     {
         opticsZoomMin=MINZOOM;
         opticsZoomMax=MAXZOOM;
-        opticsZoomMax=INITZOOM;
+        opticsZoomInit=INITZOOM;
     };
 
     class Pistol_Base_F: Pistol
     {
         opticsZoomMin=MINZOOM;
         opticsZoomMax=MAXZOOM;
-        opticsZoomMax=INITZOOM;
+        opticsZoomInit=INITZOOM;
     };
 
     class Put: Default
@@ -71,7 +71,7 @@ class CfgWeapons
         {
             opticsZoomMin=MINZOOM;
             opticsZoomMax=MAXZOOM;
-            opticsZoomMax=INITZOOM;
+            opticsZoomInit=INITZOOM;
         };
     };
 };

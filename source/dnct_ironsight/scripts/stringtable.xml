@@ -1,0 +1,36 @@
+  
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="DNCT_Ironsight">
+    <Package name="DNCT_Ironsight_Scripts">
+        <Container name="Settings">
+
+            <Key ID="STR_ironsight_SimpleControlEffect_Enabled">
+                <Original>Hip-fire penalty enabled</Original>
+            </Key>
+            <Key ID="STR_ironsight_SimpleControlEffect_Enabled_desc">
+                <Original>Enables extra recoil effects on hip-fire</Original>
+            </Key>
+
+            <Key ID="STR_ironsight_SimpleControlEffect_Power">
+                <Original>Hip-fire penalty coef.</Original>
+            </Key>
+            <Key ID="STR_ironsight_SimpleControlEffect_Power_desc">
+                <Original>Recoil multiplier for hip-fire (1 is no penalty)</Original>
+            </Key>
+
+            <Key ID="STR_ironsight_NVGEffect_Enabled">
+                <Original>Put off NVG goggles on aimdown</Original>
+            </Key>
+            <Key ID="STR_ironsight_NVGEffect_Enabled_desc">
+                <Original>Prevents usage of NVG goggles when trying to aim down any sight</Original>
+            </Key>
+
+            <Key ID="STR_ironsight_NVGEffect_AutoTurnOn_Enabled">
+                <Original>Auto-revert NVG state</Original>
+            </Key>
+            <Key ID="STR_ironsight_NVGEffect_AutoTurnOn_Enabled_desc">
+                <Original>Revert NVG state when cancel aiming (turns on NODs if they were on before aimdown)</Original>
+            </Key>
+        </Container>
+    </Package>
+</Project>
