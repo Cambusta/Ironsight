@@ -32,7 +32,7 @@ if (_isAimdown) then {
 
 	// --- Restore recoil coef (remove penalty)
 	if (
-		GVAR(SimpleControlEffect_Enabled) 
+		GVAR(WeaponControllabilityEffect_Recoil_Enabled) 
 		&& { !isNil { player getVariable _beforeRecoilVar} }
 	) then {
 		player setUnitRecoilCoefficient (player getVariable _beforeRecoilVar);
@@ -52,12 +52,12 @@ if (_isAimdown) then {
 
 	// --- Apply penalty on hip-fire 
 	if (
-		GVAR(SimpleControlEffect_Enabled) 
+		GVAR(WeaponControllabilityEffect_Recoil_Enabled) 
 		&& { isNil {player getVariable _beforeRecoilVar} }
 	) then {
 		private _recoil = unitRecoilCoefficient player;
 		player setVariable [_beforeRecoilVar, _recoil];
-		player setUnitRecoilCoefficient (_recoil * GVAR(SimpleControlEffect_Power));
+		player setUnitRecoilCoefficient (_recoil * GVAR(WeaponControllabilityEffect_Recoil_Coef));
 	};
 
 	// --- Revert NVG state when player stops from aiming 

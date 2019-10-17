@@ -25,19 +25,19 @@ private _add = {
 
 // Addon Settings
 [
-	"SimpleControlEffect_Enabled"
+	"WeaponControllabilityEffect_Recoil_Enabled"
 	, "CHECKBOX"
 	, true
 	, { if (!isNil SVAR(fnc_restartState)) then { [] call GVAR(fnc_restartState); }; } 
-	, "Simple Control Effects"
+	, "Weapon Controllability Effects"
 ] call _add;
 
 [
-	"SimpleControlEffect_Power"
+	"WeaponControllabilityEffect_Recoil_Coef"
 	, "SLIDER"
 	, [1, 5, 1.75, 2] /* Min, Max, (Default), #.## format */
 	, { if (!isNil SVAR(fnc_restartState)) then { [] call GVAR(fnc_restartState); }; } 
-	, "Simple Control Effects"
+	, "Weapon Controllability Effects"
 ] call _add;
 
 [

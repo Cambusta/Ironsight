@@ -19,7 +19,7 @@ class Extended_PreInit_EventHandlers
 {
     class DNCT_Ironsight_Scripts
     {
-        init = call compile preprocessFileLineNumbers "\dnct_ironsight\scripts\Settings.sqf";
+        init = call compile preprocessFileLineNumbers "\dnct_ironsight\scripts\settings.sqf";
     };
 };
 
@@ -27,6 +27,6 @@ class Extended_PostInit_EventHandlers
 {
     class DNCT_Ironsight_Scripts
     {
-        init = call compile preprocessFileLineNumbers "\dnct_ironsight\scripts\Init.sqf";
+        init = call compile preprocessFileLineNumbers "\dnct_ironsight\scripts\init.sqf";
     };
 };
