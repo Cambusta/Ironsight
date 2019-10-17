@@ -3,6 +3,8 @@ param (
     $BuildMode = 'Prebuild'
 )
 
+$ErrorActionPreference = "Stop"
+
 $SourceDirectoryPath = ".\source\*"
 $TempDirectoryPath = ".\temp"
 $BuildDirectoryPath = ".\build"
@@ -37,7 +39,7 @@ function RunPrebuild()
     $version = Get-Content $VersionFile -Raw
     Write-Host "Got version $version"
 
-    EnsureDirectorues
+    EnsureDirectories
     CopySourceToTempFolder
 
     SetVersion -FilesRoot $TempDirectoryPath -Version $version
@@ -98,7 +100,7 @@ function BuildAddon()
     Start-Process -NoNewWindow -FilePath $AddonBuilder -ArgumentList $arguments -Wait
 }
 
-function EnsureDirectorues {
+function EnsureDirectories {
 
     if (Test-Path $TempDirectoryPath)
     {
@@ -174,4 +176,9 @@ function RemoveTempDirectory()
     Remove-Item $TempDirectoryPath -Recurse -Force
 }
 
-Run
+try {
+    Run
+}
+catch {
+    Write-Host "An error occured: $_" -BackgroundColor Red -ForegroundColor Yellow
+}
