@@ -5,6 +5,7 @@ class CfgPatches
         name = "Ironsight";
         author = "Dunecat (aka Cambusta)";
         url = "https://github.com/Cambusta/Ironsight";
+        version = "%VERSION%";
         requiredVersion = 0.1; 
         requiredAddons[] = {
             "A3_Weapons_F",

@@ -1,2 +1,4 @@
-**/source/bin
-**/source/bck
+.vscode/*
+**/bin
+**/bck
+**/build
