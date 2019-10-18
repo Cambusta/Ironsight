@@ -4,8 +4,9 @@ $PublisherRoot = "D:\SteamLibrary\steamapps\common\Arma 3 Tools\Publisher";
 $Publisher = Get-ChildItem -Path $PublisherRoot -Filter "PublisherCmd.exe"
 
 $itemId = Get-Content ".\nightly_id.txt" -Raw
-$changeNote = "AutomatedNightly"
-$addonPath = Resolve-Path ".\build\@dnct_ironsight"
+$version = (Get-Content "..\version.txt" -Raw) -replace '\s',''
+$changeNote = "AutomatedNightly_Version$version"
+$addonPath = Resolve-Path "..\build\@dnct_ironsight"
 
 $pboExists = Test-Path "$addonPath\addons\dnct_ironsight.pbo"
 $modCppExists = Test-Path "$addonPath\mod.cpp"

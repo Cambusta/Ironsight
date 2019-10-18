@@ -1,16 +1,16 @@
 param (
     [ValidateSet('Prebuild', 'Full')]
-    $BuildMode = 'Prebuild'
+    $BuildMode = 'Full'
 )
 
 $ErrorActionPreference = "Stop"
 
-$SourceDirectoryPath = ".\source\*"
-$TempDirectoryPath = ".\temp"
-$BuildDirectoryPath = ".\build"
-$AddonFolderName="dnct_ironsight"
-$VersionFile = ".\version.txt"
+$SourceDirectoryPath = "..\source\*"
+$TempDirectoryPath = "..\temp"
+$BuildDirectoryPath = "..\build"
+$VersionFile = "..\version.txt"
 $IncludeFile = ".\include.txt"
+$AddonFolderName="dnct_ironsight"
 
 $AddonBuilder=${env:AddonBuilder}
 $PrivateBikeyFile=${env:PrivateBikey}
@@ -30,6 +30,13 @@ function Run()
 
         RunBuild
         RunPostBuild
+
+        $decision = $Host.UI.PromptForChoice($null, 'Publish nightly?', @('&Yes', '&No'), 1)
+        if ($decision -eq 0) {
+            PublishNightly
+        }
+
+        Write-Host "Done." -ForegroundColor Green
     }
 }
 
@@ -81,12 +88,17 @@ function RunPostBuild()
     }
     else 
     {
-        Write-Warning "Unable to find public key"
+        Write-Warning "Unable to find the public key"
     }
 
     RemoveTempDirectory
 
     Write-Host "Post-build completed. Addon at: $(Resolve-Path $addonRoot)"
+}
+
+function PublishNightly()
+{
+    . .\publish_nightly.ps1
 }
 
 function BuildAddon()
