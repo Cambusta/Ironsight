@@ -3,7 +3,7 @@ class CfgPatches
     class DNCT_Ironsight
     {
         name = "Ironsight";
-        author = "Dunecat (aka Cambusta)";
+        author = "Dunecat (aka Cambusta), Buzzil (aka 10Dozen)";
         url = "https://github.com/Cambusta/Ironsight";
         version = "%VERSION%";
         requiredVersion = 0.1; 

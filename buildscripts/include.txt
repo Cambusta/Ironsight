@@ -1,1 +1,1 @@
-*.p3d;*.paa
+*.p3d;*.paa;*.sqf;*.hpp;*.xml

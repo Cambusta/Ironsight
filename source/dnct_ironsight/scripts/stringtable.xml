@@ -1,0 +1,36 @@
+  
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="DNCT_Ironsight">
+    <Package name="DNCT_Ironsight_Scripts">
+        <Container name="Settings">
+
+            <Key ID="STR_ironsight_WeaponControllabilityEffect_Recoil_Enabled">
+                <Original>Hip-fire recoil penalty</Original>
+            </Key>
+            <Key ID="STR_ironsight_WeaponControllabilityEffect_Recoil_Enabled_desc">
+                <Original>Enables recoil inrease when firing from hip</Original>
+            </Key>
+
+            <Key ID="STR_ironsight_WeaponControllabilityEffect_Recoil_Coef">
+                <Original>Hip-fire penalty coefficient</Original>
+            </Key>
+            <Key ID="STR_ironsight_WeaponControllabilityEffect_Recoil_Coef_desc">
+                <Original>Recoil multiplier for hip-fire (1.0 means no penalty)</Original>
+            </Key>
+
+            <Key ID="STR_ironsight_NVGEffect_Enabled">
+                <Original>Raise NVG goggles when aiming down</Original>
+            </Key>
+            <Key ID="STR_ironsight_NVGEffect_Enabled_desc">
+                <Original>Prevents usage of NVG goggles when aiming down any type of sight</Original>
+            </Key>
+
+            <Key ID="STR_ironsight_NVGEffect_AutoTurnOn_Enabled">
+                <Original>Auto-revert NVG goggles state</Original>
+            </Key>
+            <Key ID="STR_ironsight_NVGEffect_AutoTurnOn_Enabled_desc">
+                <Original>Lowers NVGs back if they had been lowered prior aiming down</Original>
+            </Key>
+        </Container>
+    </Package>
+</Project>
